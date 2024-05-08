@@ -1,0 +1,77 @@
+{
+    "Format": "2.0.0",
+
+    "ConfigSchema":{
+        "Prize Ticket Menu Toggle":{
+            "Section": "New Content Config",
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Changes the Ticket Menu in Lewis' House"
+        },
+        "Billboard Toggle":{
+            "Section": "Vintage Original Config",
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Keep the same as in main mod"
+        },
+        "Latin Dialogue Font Change": {
+            "Section": "Vintage Original Config",
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Keep the same as in main mod"
+        },
+        "Dialogue Font Shadows":{
+            "Section": "Vintage Original Config",
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Keep the same as in main mod"
+        }
+
+    },
+
+    "Changes": [
+
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/Cursors, LooseSprites/Cursors_1_6, LooseSprites/Cursors2, LooseSprites/BundleSprites, LooseSprites/emojis, Maps/MenuTiles",
+            "FromFile": "assets/{{Target}}.png",
+            "PatchMode": "Overlay"
+        },
+
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/Billboard",
+            "FromFile": "assets/{{Target}}.png",
+            "PatchMode": "Overlay",
+            "When": { "Billboard Toggle": "true" }
+        },
+
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/PrizeTicketMenu",
+            "FromFile": "assets/{{Target}}.png",
+            "When": { "Prize Ticket Menu Toggle": "true" }
+        },
+
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/Cursors",
+            "FromFile": "assets/LooseSprites/Hourglass.png",
+            "ToArea": { "X": 15, "Y": 0, "Width": 12, "Height": 16 }
+        },
+
+        // Fonts
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/font_bold, LooseSprites/font_colored",
+            "FromFile": "assets/{{Target}}.png",
+            "When": { "Latin Dialogue Font Change": "true",  "Dialogue Font Shadows": "true" }
+        },
+        {
+            "Action": "EditImage",
+            "Target": "LooseSprites/font_bold, LooseSprites/font_colored",
+            "FromFile": "assets/{{Target}}_shadowless.png",
+            "When": { "Latin Dialogue Font Change": "true",  "Dialogue Font Shadows": "false" }
+        }
+    ]
+}

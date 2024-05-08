@@ -1,0 +1,17 @@
+{
+   "Name": "Vintage Interface v2 - 1.6 fix",
+   "Author": "Nom0ri",
+   "Version": "1.2.0",
+   "Description": "Adds mising UI elements from 1.6 update",
+   "UniqueID": "Nom0ri.VintageUIfix",
+   "UpdateKeys": ["Nexus:20754"],
+   "ContentPackFor": {
+      "UniqueID": "Pathoschild.ContentPatcher"
+   },
+   "Dependencies": [
+      {
+         "UniqueID": "ManaKirel.VintageInterface2",
+         "IsRequired": true
+      }
+   ]
+}
